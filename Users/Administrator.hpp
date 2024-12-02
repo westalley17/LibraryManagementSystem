@@ -13,6 +13,6 @@
 class Administrator : User
 {
 private:
-    char m_accessKey[AdminConstraints::ACCESS_KEY_LENGTH]; // 10 character string representing a full-pass key
+    std::string m_accessKey;
 public:
 };

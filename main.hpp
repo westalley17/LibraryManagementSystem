@@ -21,6 +21,7 @@
 #include <chrono> // for benchmarking purposes with the ability to grab time units, will also need a Timer class of some sort to implement this with.
 #include <string>
 #include <cstring>
+#include <memory>
 
 /*
  * Global constants and "singletons" stored here

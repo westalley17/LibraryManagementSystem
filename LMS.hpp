@@ -12,8 +12,8 @@
 #include "Book.hpp"
 
 // each Book and User instance in this library will be allocated using smart pointers to manage memory more safely.
-// the job of this class is to be able to manage any User or Book in its system, be it removing the instance,
-// creating more, or modifying existing ones.
+// the job of this class is to be able to manage any User or Book in its system--be it removing the instance,
+// creating more instances, or modifying existing ones.
 
 /*
     TODO:
@@ -24,6 +24,9 @@
 class LibraryManagementSystem
 {
 private:
+    std::unordered_map<std::string, std::shared_ptr<Book>> books;
+    std::unordered_map<std::string, std::shared_ptr<Administrator>> administrators;
+    std::unordered_map<std::string, std::shared_ptr<Patron>> patrons;
 
 public:
     void run();

@@ -7,12 +7,11 @@
 
 #include "Book.hpp"
 
-Book::Book(const char *ISBN, const char *author, const char *title, bool genre, bool available)
+Book::Book(const std::string &ISBN, const std::string &author, const std::string &title, bool genre, bool available)
 {
     // initialize Book attributes (assuming security measures were taken in the LMS)
-    std::strncpy(m_ISBN, ISBN, BookInputConstraints::ISBN_LENGTH); // buffer size will be taken into account in the LMS verification
-    std::strncpy(m_author, author, BookInputConstraints::AUTHOR_LENGTH);
-    std::strncpy(m_title, title, BookInputConstraints::TITLE_LENGTH);
+    // ...
+    // TODO: How to utilize move semantics to move the string parameter into the string attribute?
     m_genre = genre;
     m_available = available;
     // accumulate runners (quite proud of these)
