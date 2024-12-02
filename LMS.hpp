@@ -7,8 +7,9 @@
 
 #pragma once
 
+#include "Users/Administrator.hpp"
+#include "Users/Patron.hpp"
 #include "Book.hpp"
-#include "User.hpp"
 
 // each Book and User instance in this library will be allocated using smart pointers to manage memory more safely.
 // the job of this class is to be able to manage any User or Book in its system, be it removing the instance,
@@ -17,7 +18,7 @@
 /*
     TODO:
         - Use RegEx matching to validate user input to ensure security
-        - Validate length of user input against Constants namespace
+        - Validate length of user input against namespaces
         - IMPLEMENT WINDOWS CLEAR SCREEN FUNCTIONALITY FOR BETTER LOOK/FEEL :D
 */
 class LibraryManagementSystem
@@ -25,4 +26,5 @@ class LibraryManagementSystem
 private:
 
 public:
+    void run();
 };

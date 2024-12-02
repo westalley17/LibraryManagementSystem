@@ -1,13 +1,15 @@
-/*******************************************************
+/**************************************************************
  * Author: Wes Talley
  * Filename: main.hpp
  * Initial Date: December 1, 2024
  * Purpose: To house all the general libraries and constants
  * used throughout the program.
+ *
  * OVERALL GOAL
- * Learn smart pointers, better OOP, and secure software engineering practices
- * as well as brush up on DSA material :)
- *******************************************************/
+ * Learn smart pointers, better OOP, and secure software
+ * engineering practices as well as brush up on DSA material :)
+ *
+ **************************************************************/
 
 #pragma once
 
@@ -40,6 +42,11 @@ namespace UserInputConstraints
     const short PASSWORD_LENGTH = 50;
     const short USERNAME_LENGTH = 15;
     const short BORROW_LIMIT = 10;
+}
+
+namespace AdminConstraints
+{
+    const short ACCESS_KEY_LENGTH = 10;
 }
 
 /*************************************************/

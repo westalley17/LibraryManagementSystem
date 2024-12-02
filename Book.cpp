@@ -10,9 +10,9 @@
 Book::Book(const char *ISBN, const char *author, const char *title, bool genre, bool available)
 {
     // initialize Book attributes (assuming security measures were taken in the LMS)
-    strncpy(m_ISBN, ISBN, BookInputConstraints::ISBN_LENGTH); // buffer size will be taken into account in the LMS verification
-    strncpy(m_author, author, BookInputConstraints::AUTHOR_LENGTH);
-    strncpy(m_title, title, BookInputConstraints::TITLE_LENGTH);
+    std::strncpy(m_ISBN, ISBN, BookInputConstraints::ISBN_LENGTH); // buffer size will be taken into account in the LMS verification
+    std::strncpy(m_author, author, BookInputConstraints::AUTHOR_LENGTH);
+    std::strncpy(m_title, title, BookInputConstraints::TITLE_LENGTH);
     m_genre = genre;
     m_available = available;
     // accumulate runners (quite proud of these)
