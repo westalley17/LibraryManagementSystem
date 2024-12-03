@@ -24,10 +24,24 @@
 class LibraryManagementSystem
 {
 private:
+    // attributes
     std::unordered_map<std::string, std::shared_ptr<Book>> books;
     std::unordered_map<std::string, std::shared_ptr<Administrator>> administrators;
     std::unordered_map<std::string, std::shared_ptr<Patron>> patrons;
 
+    // functions
+    /**
+     * @brief
+     * Takes all the maps and reads their respective files into said maps.
+     * @return true
+     * @return false
+     */
+    bool populateLibrary();
+
 public:
+    /**
+     * @brief
+     * Will call subroutines to populate the maps, display any requested data, manage said data, and eventually clean up any dangling processes.
+     */
     void run();
 };

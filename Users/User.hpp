@@ -12,21 +12,29 @@
 class User
 {
 private:
-    char m_firstName[UserInputConstraints::FIRSTNAME_LENGTH];
+    std::string m_firstName;
     short m_lenFirstName;
-    char m_lastName[UserInputConstraints::LASTNAME_LENGTH];
+    std::string m_lastName;
     short m_lenLastName;
-    char m_email[UserInputConstraints::EMAIL_LENGTH];
+    std::string m_email;
     short m_lenEmail;
-    char m_password[UserInputConstraints::PASSWORD_LENGTH];
+    std::string m_password;
     short m_lenPassword;
-    char m_username[UserInputConstraints::USERNAME_LENGTH];
+    std::string m_username;
     short m_lenUsername;
 
 public:
-    char *getFirstName() { return m_lenFirstName > 0 ? m_firstName : nullptr; }
-    char *getLastName() { return m_lenLastName > 0 ? m_lastName : nullptr; }
-    char *getEmail() { return m_lenEmail > 0 ? m_email : nullptr; }
-    char *getPassword() { return m_lenPassword > 0 ? m_password : nullptr; }
-    char *getUsername() { return m_lenUsername > 0 ? m_username : nullptr; }
+    // getters
+    const std::string &getFirstName() const { return m_firstName; }
+    const std::string &getLastName() const { return m_lastName; }
+    const std::string &getEmail() const { return m_email; }
+    const std::string &getPassword() const { return m_password; }
+    const std::string &getUsername() const { return m_username; }
+
+    // setters
+    void setFirstName(const std::string &firstName) { m_firstName = firstName; }
+    void setLastName(const std::string &lastName) { m_lastName = lastName; }
+    void setEmail(const std::string &email) { m_email = email; }
+    void setPassword(const std::string &password) { m_password = password; }
+    void setUsername(const std::string &username) { m_username = username; }
 };

@@ -10,9 +10,11 @@
 #include "User.hpp"
 
 // child class from the general User class for typical library visitor
-class Patron : User
+class Patron : public User
 {
 private:
     short m_borrowed; // init to 0 in constructor
 public:
+    short getNumBorrowed() { return m_borrowed; }
+    void setNumBorrowed(short borrowed) { m_borrowed = borrowed; }
 };
