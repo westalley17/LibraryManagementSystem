@@ -18,24 +18,25 @@ private:
     short m_lenTitle;
     std::string m_author;
     short m_lenAuthor;
-    bool m_genre;
+    std::string m_genre;
     bool m_available;
 
 public:
-    Book(const std::string &, const std::string &, const std::string &, bool, bool);
+    Book();
+    Book(const std::string &, const std::string &, const std::string &, const std::string&, bool);
     ~Book();
     // getters
     const std::string &getISBN() const { return m_ISBN; }     // return null in the event that the c-string is empty
     const std::string &getAuthor() const { return m_author; } // return null in the event that the c-string is empty
     const std::string &getTitle() const { return m_title; }   // return null in the event that the c-string is empty
-    const bool getGenre() const { return m_genre; }
+    const std::string &getGenre() const { return m_genre; }
     const bool getAvailability() const { return m_available; }
 
-    // setters 
+    // setters
     void setISBN(const std::string &ISBN) { m_ISBN = ISBN; }
     void setTitle(const std::string &title) { m_title = title; }
     void setAuthor(const std::string &author) { m_author = author; }
-    void setGenre(bool genre) { m_genre = genre; }
+    void setGenre(const std::string &genre) { m_genre = genre; }
     void setAvailable(bool available) { m_available = available; }
 };
 

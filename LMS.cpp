@@ -17,6 +17,7 @@
  */
 void LibraryManagementSystem::run()
 {
+    int menuChoice = -1;
     // 1. Populate map attributes
     // use inverses of typical logic flow to make less indentations and more readable code.
     if (populateLibrary() == false)
@@ -26,6 +27,12 @@ void LibraryManagementSystem::run()
         return;
     }
     // else continue running...
+    // 2. Run Library :)
+    do
+    {
+        system("cls"); // clear the screen every time it loops to keep everything in one window
+        
+    } while (menuChoice != 5);
 }
 /*
  * TODO: spin each one of these file objects on to
@@ -42,7 +49,8 @@ bool LibraryManagementSystem::populateLibrary()
     // fill books map
     if (!infileBooks.is_open())
     {
-        std::cout << std::endl << "Could not open books.txt!" << std::endl;
+        std::cout << std::endl
+                  << "Could not open books.txt!" << std::endl;
         return false;
     }
     while (std::getline(infileBooks, buffer))
@@ -54,9 +62,9 @@ bool LibraryManagementSystem::populateLibrary()
         std::getline(infileBooks, buffer);
         newBook.get()->setAuthor(buffer);
         std::getline(infileBooks, buffer);
-        newBook.get()->setGenre(buffer == "1" ? true : false);
+        newBook.get()->setGenre(buffer);
         std::getline(infileBooks, buffer);
-        newBook.get()->setAvailable(buffer == "1" ? true : false);
+        newBook.get()->setAvailable(buffer == "Yes" ? true : false);
         // populating a new pair in the map automatically calls the copy constructor of the smart pointer,
         // increasing its ref count aka storing the book in the library :)
         books[newBook.get()->getISBN()] = newBook;
@@ -96,15 +104,15 @@ bool LibraryManagementSystem::populateLibrary()
     {
         std::shared_ptr<Patron> newPatron = std::make_shared<Patron>();
         newPatron.get()->setFirstName(buffer);
-        std::getline(infileAdmins, buffer);
+        std::getline(infilePatrons, buffer);
         newPatron.get()->setLastName(buffer);
-        std::getline(infileAdmins, buffer);
+        std::getline(infilePatrons, buffer);
         newPatron.get()->setEmail(buffer);
-        std::getline(infileAdmins, buffer);
+        std::getline(infilePatrons, buffer);
         newPatron.get()->setPassword(buffer);
-        std::getline(infileAdmins, buffer);
+        std::getline(infilePatrons, buffer);
         newPatron.get()->setUsername(buffer);
-        std::getline(infileAdmins, buffer);
+        std::getline(infilePatrons, buffer);
         newPatron.get()->setNumBorrowed(std::stoi(buffer));
         patrons[newPatron.get()->getUsername()] = newPatron;
     }

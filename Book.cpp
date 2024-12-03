@@ -7,7 +7,11 @@
 
 #include "Book.hpp"
 
-Book::Book(const std::string &ISBN, const std::string &author, const std::string &title, bool genre, bool available)
+Book::Book()
+{
+}
+
+Book::Book(const std::string &ISBN, const std::string &author, const std::string &title, const std::string &genre, bool available)
 {
     // initialize Book attributes (assuming security measures were taken in the LMS)
     // ...

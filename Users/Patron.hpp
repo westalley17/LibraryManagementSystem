@@ -13,8 +13,8 @@
 class Patron : public User
 {
 private:
-    short m_borrowed; // init to 0 in constructor
+    int m_borrowed; // init to 0 in constructor
 public:
     short getNumBorrowed() { return m_borrowed; }
-    void setNumBorrowed(short borrowed) { m_borrowed = borrowed; }
+    void setNumBorrowed(int borrowed) { m_borrowed = borrowed; }
 };

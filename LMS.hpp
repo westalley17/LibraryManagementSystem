@@ -28,6 +28,7 @@ private:
     std::unordered_map<std::string, std::shared_ptr<Book>> books;
     std::unordered_map<std::string, std::shared_ptr<Administrator>> administrators;
     std::unordered_map<std::string, std::shared_ptr<Patron>> patrons;
+    // figure out how to store a currently logged-in User in the LMS class...
 
     // functions
     /**
