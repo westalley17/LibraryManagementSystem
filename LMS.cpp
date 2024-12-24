@@ -56,18 +56,18 @@ bool LibraryManagementSystem::populateLibrary()
     while (std::getline(infileBooks, buffer))
     {
         std::shared_ptr<Book> newBook = std::make_shared<Book>();
-        newBook.get()->setISBN(buffer);
+        newBook->setISBN(buffer);
         std::getline(infileBooks, buffer);
-        newBook.get()->setTitle(buffer);
+        newBook->setTitle(buffer);
         std::getline(infileBooks, buffer);
-        newBook.get()->setAuthor(buffer);
+        newBook->setAuthor(buffer);
         std::getline(infileBooks, buffer);
-        newBook.get()->setGenre(buffer);
+        newBook->setGenre(buffer);
         std::getline(infileBooks, buffer);
-        newBook.get()->setAvailable(buffer == "Yes" ? true : false);
+        newBook->setAvailable(buffer == "Yes" ? true : false);
         // populating a new pair in the map automatically calls the copy constructor of the smart pointer,
         // increasing its ref count aka storing the book in the library :)
-        books[newBook.get()->getISBN()] = newBook;
+        books[newBook->getISBN()] = newBook;
     }
     if (!infileAdmins.is_open())
     {
@@ -79,19 +79,19 @@ bool LibraryManagementSystem::populateLibrary()
     while (std::getline(infileAdmins, buffer))
     {
         std::shared_ptr<Administrator> newAdmin = std::make_shared<Administrator>();
-        newAdmin.get()->setFirstName(buffer);
+        newAdmin->setFirstName(buffer);
         std::getline(infileAdmins, buffer);
-        newAdmin.get()->setLastName(buffer);
+        newAdmin->setLastName(buffer);
         std::getline(infileAdmins, buffer);
-        newAdmin.get()->setEmail(buffer);
+        newAdmin->setEmail(buffer);
         std::getline(infileAdmins, buffer);
-        newAdmin.get()->setPassword(buffer);
+        newAdmin->setPassword(buffer);
         std::getline(infileAdmins, buffer);
-        newAdmin.get()->setUsername(buffer);
+        newAdmin->setUsername(buffer);
         std::getline(infileAdmins, buffer);
-        newAdmin.get()->setAccessKey(buffer);
+        newAdmin->setAccessKey(buffer);
         // same thing happens here with the copy constructor doohicky :)
-        administrators[newAdmin.get()->getUsername()] = newAdmin;
+        administrators[newAdmin->getUsername()] = newAdmin;
     }
     if (!infilePatrons.is_open())
     {
@@ -103,17 +103,17 @@ bool LibraryManagementSystem::populateLibrary()
     while (std::getline(infilePatrons, buffer))
     {
         std::shared_ptr<Patron> newPatron = std::make_shared<Patron>();
-        newPatron.get()->setFirstName(buffer);
+        newPatron->setFirstName(buffer);
         std::getline(infilePatrons, buffer);
-        newPatron.get()->setLastName(buffer);
+        newPatron->setLastName(buffer);
         std::getline(infilePatrons, buffer);
-        newPatron.get()->setEmail(buffer);
+        newPatron->setEmail(buffer);
         std::getline(infilePatrons, buffer);
-        newPatron.get()->setPassword(buffer);
+        newPatron->setPassword(buffer);
         std::getline(infilePatrons, buffer);
-        newPatron.get()->setUsername(buffer);
+        newPatron->setUsername(buffer);
         std::getline(infilePatrons, buffer);
-        newPatron.get()->setNumBorrowed(std::stoi(buffer));
+        newPatron->setNumBorrowed(std::stoi(buffer));
         patrons[newPatron.get()->getUsername()] = newPatron;
     }
     return true;
